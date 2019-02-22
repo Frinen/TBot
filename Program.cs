@@ -29,7 +29,7 @@ namespace TBot
                 Console.WriteLine($"Satrt messaging in chat {e.Message.Chat.Id}.");
                 await botClient.SendTextMessageAsync(
                   chatId: e.Message.Chat,
-                  text: "Ну че, драсте"
+                  text: "Ну че, драсте, я говеный попугай который только повтряет сообщеня, напишы ченибуть, хуле"
                 );
             }
             else if (e.Message.Text != null)
@@ -38,7 +38,7 @@ namespace TBot
 
                 await botClient.SendTextMessageAsync(
                   chatId: e.Message.Chat,
-                  text: "You said:\n" + e.Message.Text
+                  text: "Че ты там спизданул?:\n" + e.Message.Text
                 );
             }
             
