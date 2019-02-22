@@ -25,5 +25,27 @@ namespace TBot.Actions
             
             return paresdMessage;
         }
+        public static Location ParseLocation(string massage)
+        {
+            var location = new Location();
+            if (massage != null)
+            {
+                string[] masages = massage.Split(" ", 2);
+
+                if (masages.Length == 2)
+                {
+                    try
+                    {
+                        location.Latitude = float.Parse(masages[0]);
+                        location.Longitude = float.Parse(masages[1]);
+                    }
+                    catch
+                    {
+                        location.Massage = "Wrong cordinates";
+                    }
+                }
+            }
+            return location;
+        }
     }
 }
