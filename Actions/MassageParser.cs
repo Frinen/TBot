@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TBot.Models;
 using Telegram.Bot.Args;
+using Telegram.Bot.Types.Enums;
 
 namespace TBot.Actions
 {
@@ -10,19 +11,22 @@ namespace TBot.Actions
     {
         public static ParsedMessage Parse(MessageEventArgs e)
         {
-            string[] massage = e.Message.Text.ToLower().Split(" ", 2);
-
             var paresdMessage = new ParsedMessage();
-            if (massage.Length == 2)
-            {
-                paresdMessage.Command = massage[0];
-                paresdMessage.Message = massage[1];
-            }
-            else
-            {
-                paresdMessage.Command = massage[0];
-            }
             
+
+            if (e.Message.Type == MessageType.Text)
+            {
+                string[] massage = e.Message.Text.ToLower().Split(" ", 2);
+                if (massage.Length == 2)
+                {
+                    paresdMessage.Command = massage[0];
+                    paresdMessage.Message = massage[1];
+                }
+                else
+                {
+                    paresdMessage.Command = massage[0];
+                }
+            }
             return paresdMessage;
         }
         public static Location ParseLocation(string massage)

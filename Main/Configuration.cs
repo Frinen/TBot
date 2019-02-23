@@ -6,7 +6,7 @@ namespace TBot.Main
 {
     public static class Configuration
     {
-        public static string Token = "709032790:AAHF0ekIY51LSK58UCEKQvwmNtE73ATzTJc";
+        public static string Token = "663171333:AAG535DheZUxg3MmMynEq8JKCaECPtUcsx8";
         public static string StickerPath = "wwwroot";
     }
 }
